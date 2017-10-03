@@ -24,7 +24,7 @@
             "value": "wintestvm-nsg"
         },
         "adminPassword": {
-            "value": null
+            "value": "@Simple1@"
         },
         "diagnosticsStorageAccountName": {
             "value": "cloudhostingstordev01"
