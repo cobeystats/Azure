@@ -27,10 +27,6 @@
         "networkInterfaceName": {
             "type": "string"
         },
-        "networkSecurityGroupName": {
-            "type": "string",
-            "defaultValue": "simplevm"
-        },
         "adminPassword": {
             "type": "securestring"
         },
@@ -57,7 +53,7 @@
         }
     },
     "variables": {
-        
+        "networkSecurityGroupName": "simplevm",
         "vnetId": "[resourceId('CloudShared-t-rg','Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
 
@@ -141,7 +137,7 @@
             "apiVersion": "2016-09-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroupName'))]"
+                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
             ],
             "properties": {
                 "ipConfigurations": [
@@ -156,33 +152,11 @@
                     }
                 ],
                 "networkSecurityGroup": {
-                    "id": "[resourceId('nsg-t-rg', 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]"
+                    "id": "[resourceId('nsg-t-rg', 'Microsoft.Network/networkSecurityGroups',  variables('networkSecurityGroupName'))]"
                 }
             }
-        },
-        {
-            "name": "[parameters('networkSecurityGroupName')]",
-            "type": "Microsoft.Network/networkSecurityGroups",
-            "apiVersion": "2017-06-01",
-            "location": "[parameters('location')]",
-            "properties": {
-                "securityRules": [
-                    {
-                        "name": "default-allow-rdp",
-                        "properties": {
-                            "priority": 1000,
-                            "protocol": "TCP",
-                            "access": "Allow",
-                            "direction": "Inbound",
-                            "sourceAddressPrefix": "*",
-                            "sourcePortRange": "*",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "3389"
-                        }
-                    }
-                ]
-            }
         }
+        
     ],
     "outputs": {
         "adminUsername": {
