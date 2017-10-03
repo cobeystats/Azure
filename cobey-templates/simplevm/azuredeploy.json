@@ -28,7 +28,8 @@
             "type": "string"
         },
         "networkSecurityGroupName": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "simplevm"
         },
         "adminPassword": {
             "type": "securestring"
@@ -155,7 +156,7 @@
                     }
                 ],
                 "networkSecurityGroup": {
-                    "id": "[resourceId('cobeyps-t-rg', 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]"
+                    "id": "[resourceId('nsg-t-rg', 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]"
                 }
             }
         },

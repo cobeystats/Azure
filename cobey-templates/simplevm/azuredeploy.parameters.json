@@ -20,9 +20,6 @@
         "networkInterfaceName": {
             "value": "wintestvm67"
         },
-        "networkSecurityGroupName": {
-            "value": "wintestvm-nsg"
-        },
         "adminPassword": {
             "value": "@Simple1@"
         },
