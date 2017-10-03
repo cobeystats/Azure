@@ -12,49 +12,49 @@
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "private-dmz-in"
+            "name": "private-dmz-in",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "private-dmz-out"
+            "name": "private-dmz-out",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "shared"
+            "name": "shared",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "devops"
+            "name": "devops",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "shared-web"
+            "name": "shared-web",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "shared-business"
+            "name": "shared-business",
             "location": "[variables('location')]"
 
         }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "shared-db"
+            "name": "shared-db",
             "location": "[variables('location')]"
 
         }
