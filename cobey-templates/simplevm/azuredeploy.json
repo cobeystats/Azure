@@ -6,17 +6,20 @@
             "type": "string",
             "allowedValues": [
                 "canadaeast", "canadacentral"
-            ],
-            "defaultValue": "canadaeast"
+            ]
+            
         },
         "virtualMachineName": {
             "type": "string"
         },
         "virtualMachineSize": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "Standard_D1_v2"
+            
         },
         "adminUsername": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "admin"
         },
         "virtualNetworkName": {
             "type": "string"
@@ -53,8 +56,10 @@
         }
     },
     "variables": {
+        
         "vnetId": "[resourceId('CloudShared-t-rg','Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
+
     },
     "resources": [
         {
