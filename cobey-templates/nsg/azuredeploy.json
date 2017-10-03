@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        
+    },
+    "variables": {
+        "location": "canadaeast"
+        
+    },
+    "resources": [
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "private-dmz-in"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "private-dmz-out"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "shared"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "devops"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "shared-web"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "shared-business"
+            "location": "[variables('location')]"
+
+        }
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "shared-db"
+            "location": "[variables('location')]"
+
+        }
+    ],
+    "outputs": {}
+}
