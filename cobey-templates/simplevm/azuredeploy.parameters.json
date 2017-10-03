@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "canadaeast"
+        },
+        "virtualMachineName": {
+            "value": "wintestvm"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D1_v2"
+        },
+        "adminUsername": {
+            "value": "cobey"
+        },
+        "virtualNetworkName": {
+            "value": "DevTest"
+        },
+        "networkInterfaceName": {
+            "value": "wintestvm67"
+        },
+        "networkSecurityGroupName": {
+            "value": "wintestvm-nsg"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "cloudhostingstordev01"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/e5faff3e-15f7-4b16-8d51-b94b14fee4ba/resourceGroups/cloudhost-t-rg/providers/Microsoft.Storage/storageAccounts/cloudhostingstordev01"
+        },
+        "subnetName": {
+            "value": "CloudAdmin"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "17:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "Eastern Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        }
+    }
+}
